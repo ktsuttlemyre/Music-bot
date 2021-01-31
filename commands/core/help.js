@@ -6,8 +6,10 @@ module.exports = {
 
     execute(client, message, args) {
         if (!args[0]) {
-            const infos = message.client.commands.filter(x => x.category == 'Infos').map((x) => '`' + x.name + '`').join(', ');
+            const bot = message.client.commands.filter(x => x.category == 'Bot').map((x) => '`' + x.name + '`').join(', ');
             const music = message.client.commands.filter(x => x.category == 'Music').map((x) => '`' + x.name + '`').join(', ');
+            const fun = message.client.commands.filter(x => x.category == 'Fun').map((x) => '`' + x.name + '`').join(', ');
+            const utility = message.client.commands.filter(x => x.category == 'Utility').map((x) => '`' + x.name + '`').join(', ');
 
             message.channel.send({
                 embed: {
@@ -15,9 +17,11 @@ module.exports = {
                     author: { name: 'Help pannel' },
                     footer: { text: 'This bot uses a Github project made by Zerio (ZerioDev/Music-bot)' },
                     fields: [
-                        { name: 'Bot', value: infos },
+                        { name: 'Bot', value: bot },
+                        { name: 'Fun', value: fun },
                         { name: 'Music', value: music },
                         { name: 'Filters', value: client.filters.map((x) => '`' + x + '`').join(', ') },
+                        { name: 'Utility', value: utility },
                     ],
                     timestamp: new Date(),
                     description: `To use filters, ${client.config.discord.prefix}filter (the filter). Example : ${client.config.discord.prefix}filter 8D.`,
@@ -32,7 +36,7 @@ module.exports = {
                 embed: {
                     color: 'ORANGE',
                     author: { name: 'Help pannel' },
-                    footer: { text: 'This bot uses a Github project made by Zerio (ZerioDev/Music-bot)' },
+                    footer: { text: 'This bot forked from a Github project by Zerio (ZerioDev/Music-bot)' },
                     fields: [
                         { name: 'Name', value: command.name, inline: true },
                         { name: 'Category', value: command.category, inline: true },
