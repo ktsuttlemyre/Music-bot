@@ -8,6 +8,6 @@ module.exports = {
         var max=1
         var min=0
         var coin = (Math.floor(Math.random() * (max - min + 1) + min))?'heads':'tails';
-        message.channel.send(`${client.emotes.success} - Coin : **${coin}ms** !`);
+        message.channel.send(`:coin: - Coin : **${coin}** !`);
     },
 };
