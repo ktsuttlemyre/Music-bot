@@ -9,7 +9,7 @@ module.exports = {
 
     discord: {
         token: '',
-        prefix: '',
+        prefix: 'yo mama say',
         activity: '',
     },
 
