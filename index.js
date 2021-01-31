@@ -12,7 +12,7 @@ client.config = require('./config/bot');
 client.config.environment = process.env.environment || client.config.environment 
 client.config.token = process.env.token || client.config.token 
 client.config.prefix = process.env.prefix || client.config.prefix
-client.config.activity = process.env.activity client.config.activity
+client.config.activity = process.env.activity|| client.config.activity
 
 client.emotes = client.config.emojis;
 client.filters = client.config.filters;
