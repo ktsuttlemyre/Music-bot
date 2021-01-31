@@ -8,11 +8,12 @@ const { Player } = require('discord-player');
 client.player = new Player(client);
 client.config = require('./config/bot');
 
+var disCon= client.config.discord
 //allows for environment variables to be set
-client.config.environment = process.env.environment || client.config.environment 
-client.config.token = process.env.token || client.config.token 
-client.config.prefix = process.env.prefix || client.config.prefix
-client.config.activity = process.env.activity|| client.config.activity
+disCon.environment = process.env.environment || disCon.environment 
+disCon.token = process.env.token || disCon.token 
+disCon.prefix = process.env.prefix || disCon.prefix
+disCon.activity = process.env.activity|| disCon.activity
 
 client.emotes = client.config.emojis;
 client.filters = client.config.filters;
